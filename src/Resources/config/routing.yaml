@@ -1,0 +1,45 @@
+behappy_cart_management_plugin.cart.save:
+    path: /cart/save
+    defaults:
+        _controller: BeHappySyliusCartManagementPlugin:Front\Cart:save
+
+behappy_cart_management_plugin.cart.load:
+    path: /cart/{token}/load
+    defaults:
+        _controller: BeHappySyliusCartManagementPlugin:Front\Cart:load
+
+behappy_cart_management_plugin.account.saved_cart_list:
+    path: /account/saved-carts
+    methods: [ GET ]
+    defaults:
+        _controller: behappy_cart_management_plugin.controller.saved_cart:indexAction
+        _sylius:
+            section: account
+            template: "@BeHappySyliusCartManagementPlugin/Account/SavedCart/index.html.twig"
+            grid: behappy_cart_management_plugin.front.saved_cart
+
+behappy_cart_management_plugin.account.saved_cart_show:
+    path: /saved-carts/{token}
+    methods: [ GET ]
+    defaults:
+        _controller: behappy_cart_management_plugin.controller.saved_cart:showAction
+        _sylius:
+            section: account
+            template: "@BeHappySyliusCartManagementPlugin/Account/SavedCart/show.html.twig"
+            repository:
+                method: 'findByToken'
+                arguments:
+                    - '$token'
+
+behappy_cart_management_plugin.account.saved_cart_delete:
+    path: /account/saved-carts/{id}/delete
+    methods: [ GET ]
+    defaults:
+        _controller: behappy_cart_management_plugin.controller.saved_cart:deleteAction
+        _sylius:
+            section: account
+            repository:
+                method: 'findByIdAndUser'
+                arguments:
+                    - '$id'
+                    - "expr:service('sylius.context.customer').getCustomer().getUser()"

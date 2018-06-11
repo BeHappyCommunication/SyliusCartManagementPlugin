@@ -1,0 +1,13 @@
+{% extends '@SyliusShop/Account/layout.html.twig' %}
+
+{% block breadcrumb %}
+{% endblock %}
+
+{% block subcontent %}
+    <h1 class="ui header">
+        {{ 'behappy.cart_management.account.my_saved_carts'|trans }}
+        <div class="sub header">{{ 'behappy.cart_management.account.my_saved_carts_sub'|trans }}</div>
+    </h1>
+
+    {{ sylius_grid_render(resources, '@SyliusUi/Grid/_default.html.twig') }}
+{% endblock %}

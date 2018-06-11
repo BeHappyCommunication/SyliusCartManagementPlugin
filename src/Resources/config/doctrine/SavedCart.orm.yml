@@ -1,0 +1,32 @@
+BeHappy\SyliusCartManagementPlugin\Entity\SavedCart:
+    type: entity
+    table: behappy_saved_cart
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+            options:
+                unsigned: true
+    fields:
+        token:
+            type: string
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+            nullable: true
+        name:
+            type: string
+            nullable: true
+    oneToMany:
+        savedCartItems:
+            targetEntity: BeHappy\SyliusCartManagementPlugin\Entity\SavedCartItem
+            mappedBy: savedCart
+            cascade: [ ALL ]
+    manyToOne:
+        user:
+            targetEntity: Sylius\Component\Core\Model\ShopUser
+    lifecycleCallbacks:
+        prePersist: [ create ]
+        preUpdate: [ update ]

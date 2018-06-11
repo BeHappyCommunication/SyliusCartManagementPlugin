@@ -1,0 +1,11 @@
+behappy:
+    cart_management:
+        account:
+            my_saved_carts: 'Mes paniers sauvegardés'
+            my_saved_carts_sub: 'Consulter vos paniers sauvergardés'
+        ui:
+            saved_cart: 'Panier sauvergardé'
+        action:
+            load:
+                title: 'Charger le panier'
+                success: 'Panier chargé'

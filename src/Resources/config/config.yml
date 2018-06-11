@@ -1,0 +1,4 @@
+imports:
+    - { resource: '@BeHappySyliusCartManagementPlugin/Resources/config/services.yaml' }
+    - { resource: '@BeHappySyliusCartManagementPlugin/Resources/config/grids.yaml' }
+    - { resource: '@BeHappySyliusCartManagementPlugin/Resources/config/resources.yaml' }

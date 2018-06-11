@@ -1,0 +1,7 @@
+sylius_resource:
+    resources:
+        behappy_cart_management_plugin.saved_cart:
+            classes:
+                model: BeHappy\SyliusCartManagementPlugin\Entity\SavedCart
+                repository: BeHappy\SyliusCartManagementPlugin\Repository\SavedCartRepository
+                controller: BeHappy\SyliusCartManagementPlugin\Controller\SavedCartController

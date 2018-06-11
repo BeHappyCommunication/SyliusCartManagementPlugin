@@ -1,0 +1,21 @@
+BeHappy\SyliusCartManagementPlugin\Entity\SavedCartItem:
+    type: entity
+    table: behappy_saved_cart_item
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+            options:
+                unsigned: true
+    fields:
+        quantity:
+            type: integer
+            options:
+                unsigned: true
+    manyToOne:
+        product:
+            targetEntity: Sylius\Component\Core\Model\ProductVariant
+        savedCart:
+            targetEntity: BeHappy\SyliusCartManagementPlugin\Entity\SavedCart
+            inversedBy: savedCartItems

@@ -1,0 +1,23 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <h1 class="ui header">
+        <i class="circular cart icon"></i>
+        <div class="content">
+            {{ 'behappy.cart_management.ui.saved_cart'|trans }}
+            <div class="sub header">
+                <div class="ui horizontal divided list">
+                    <div class="item">
+                        {{ resource.createdAt.format('d/m/Y H:i') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h1>
+
+    {% include '@SyliusShop/Common/Order/_table.html.twig' with { order: order } %}
+
+    <a class="ui green button" href="{{ path('behappy_cart_management_plugin.cart.load', { token: resource.token }) }}">
+        {{ 'behappy.cart_management.action.load.title'|trans }}
+    </a>
+{% endblock %}

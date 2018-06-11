@@ -1,0 +1,27 @@
+sylius_grid:
+    grids:
+        behappy_cart_management_plugin.front.saved_cart:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: BeHappy\SyliusCartManagementPlugin\Entity\SavedCart
+                    repository:
+                        method: createByUserQueryBuilder
+                        arguments:
+                            - "expr:service('sylius.context.customer').getCustomer().getUser()"
+            fields:
+                createdAt:
+                    type: datetime
+                    label: 'selection.field.date'
+            actions:
+                item:
+                    show:
+                        type: show
+                        options:
+                            link:
+                                route: behappy_cart_management_plugin.account.saved_cart_show
+                                parameters:
+                                    token: resource.token
+
+                    delete:
+                        type: delete

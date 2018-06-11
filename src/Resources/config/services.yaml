@@ -1,0 +1,10 @@
+services:
+    behappy_cart_management_plugin.listener.account.menu_builder:
+            class: BeHappy\SyliusCartManagementPlugin\Menu\AccountMenuListener
+            tags:
+                - { name: kernel.event_listener, event: sylius.menu.shop.account, method: addAccountMenuItems }
+
+    behappy_cart_management_plugin.service.cart:
+        class: BeHappy\SyliusCartManagementPlugin\Service\CartService
+        calls:
+            - { method: setContainer, arguments: [ '@service_container' ] }

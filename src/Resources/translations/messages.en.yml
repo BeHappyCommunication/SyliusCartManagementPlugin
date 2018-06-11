@@ -1,0 +1,11 @@
+behappy:
+    cart_management:
+        account:
+            my_saved_carts: 'My saved carts'
+            my_saved_carts_sub: 'View your saved carts'
+        ui:
+            saved_cart: 'Cart saved'
+        action:
+            load:
+                title: 'Load cart'
+                success: 'Cart loaded'
