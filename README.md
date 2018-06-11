@@ -7,7 +7,6 @@ $ composer require behappy/cart-management-plugin
 ```
 
 ## Enable the plugin
-Since this plugin has dependencies, you must also enable those.
 
 ```php
 // in app/AppKernel.php
