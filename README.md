@@ -32,7 +32,7 @@ imports:
 ...
 behappy_cart_management_plugin.shop:
     resource: '@BeHappySyliusCartManagementPlugin/Resources/config/routing.yaml'
-    prefix: /{_locale}
+    prefix: /
 ...
 ```
 
