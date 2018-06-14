@@ -43,3 +43,5 @@ behappy_cart_management_plugin.account.saved_cart_delete:
                 arguments:
                     - '$id'
                     - "expr:service('sylius.context.customer').getCustomer().getUser()"
+            redirect:
+                route: behappy_cart_management_plugin.account.saved_cart_list
