@@ -8,3 +8,4 @@ services:
         class: BeHappy\SyliusCartManagementPlugin\Service\CartService
         calls:
             - { method: setContainer, arguments: [ '@service_container' ] }
+        public: true

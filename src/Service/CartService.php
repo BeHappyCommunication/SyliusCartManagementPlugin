@@ -4,6 +4,7 @@ namespace BeHappy\SyliusCartManagementPlugin\Service;
 
 use BeHappy\SyliusCartManagementPlugin\Entity\SavedCart;
 use BeHappy\SyliusCartManagementPlugin\Entity\SavedCartItem;
+use Sylius\Component\Core\Model\CustomerInterface;
 use Sylius\Component\Core\Model\OrderInterface;
 use Sylius\Component\Core\Model\OrderItemInterface;
 use Sylius\Component\Core\Model\ShopUserInterface;
@@ -39,10 +40,10 @@ class CartService implements ContainerAwareInterface
 
             $em->persist($savedItem);
         }
-
-        $customer = $this->container->get('sylius.context.customer')->getCustomer();
-
-        if ($customer->getUser() instanceof ShopUserInterface) {
+    
+        $customer = $cart->getCustomer();
+    
+        if ($customer instanceof CustomerInterface && $customer->getUser() instanceof ShopUserInterface) {
             $savedCart->setUser($customer->getUser());
         }
 
