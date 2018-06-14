@@ -22,6 +22,10 @@ sylius_grid:
                                 route: behappy_cart_management_plugin.account.saved_cart_show
                                 parameters:
                                     token: resource.token
-
                     delete:
                         type: delete
+                        options:
+                            link:
+                                route: behappy_cart_management_plugin.account.saved_cart_delete
+                                parameters:
+                                    token: resource.token
