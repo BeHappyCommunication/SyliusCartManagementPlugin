@@ -33,7 +33,7 @@ behappy_cart_management_plugin.account.saved_cart_show:
 
 behappy_cart_management_plugin.account.saved_cart_delete:
     path: /account/saved-carts/{id}/delete
-    methods: [ GET ]
+    methods: [ DELETE ]
     defaults:
         _controller: behappy_cart_management_plugin.controller.saved_cart:deleteAction
         _sylius:
