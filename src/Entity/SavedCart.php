@@ -32,7 +32,7 @@ class SavedCart implements TimestampableInterface, ResourceInterface
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -40,7 +40,7 @@ class SavedCart implements TimestampableInterface, ResourceInterface
     /**
      * @param int $id
      */
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
