@@ -1,5 +1,5 @@
 BeHappy\SyliusCartManagementPlugin\Entity\SavedCart:
-    type: entity
+    type: mappedSuperclass
     table: behappy_saved_cart
     id:
         id:
