@@ -77,7 +77,8 @@ class CartService implements ContainerAwareInterface
 
         foreach ($savedCart->getSavedCartItems() as $savedItem) {
             $item = $factory->createNew();
-            $item->setVariant($savedItem->getProduct());
+            $productVariant = $this->container->get('sylius.repository.product_variant')->find($savedItem->getProduct()->getId());
+            $item->setVariant($productVariant);
 
             $modifier->modify($item, $savedItem->getQuantity());
 
